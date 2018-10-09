@@ -9,3 +9,7 @@ git clone https://github.com/labvs/Platformer.git
 git add .
 git commit -a
 git push
+
+
+#Разработчики
+Починок Игорь Олегович
