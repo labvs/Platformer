@@ -8,3 +8,4 @@ def on_render_game():
     start_y = 450
     arcade.draw_point(start_x, start_y, arcade.color.BLUE, 5)
     arcade.draw_text("Идет Игра", start_x, start_y, arcade.color.BLACK, 40)
+    arcade.draw_text("Андрей", 100, 600, arcade.color.BLACK, 40)
