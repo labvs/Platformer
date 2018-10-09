@@ -8,7 +8,7 @@ import os
 
 ### Константы
 SPRITE_SCALING = 0.5
-
+# Ширина и высота экрана
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
