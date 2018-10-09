@@ -18,6 +18,7 @@ from r_game import on_render_game
 from r_pause import on_render_pause
 from r_mainmenu import on_render_mainmenu
 from r_gameover import on_render_gameover
+from r_boom import on_render_boom
 
 ### Основной класс игры
 class MyGame(arcade.Window):
@@ -27,7 +28,7 @@ class MyGame(arcade.Window):
         # Вызываем родительский класс и создаем окно
         super().__init__(width, height)
         # Перекрашиваем фон окна
-        arcade.set_background_color(arcade.color.AMAZON)        
+        arcade.set_background_color(arcade.color.AMAZON)
 
     def setup(self):
         # Всякие начальные установки
@@ -39,6 +40,7 @@ class MyGame(arcade.Window):
         self.isPause = 3
         self.isMainMenu = 4
         self.isGameOver = 5
+        self.isBoom = 6
         # При старте игры переводим ее в состояние "Заставка"
         self.GameState = self.isTitle
         # Подключаем функции, которые будут отрисовывать соовтетствующие состояния игры
@@ -46,7 +48,8 @@ class MyGame(arcade.Window):
         self.on_render_game = on_render_game
         self.on_render_pause = on_render_pause
         self.on_render_mainmenu = on_render_mainmenu
-        self.on_render_gameover = on_render_gameover       
+        self.on_render_gameover = on_render_gameover
+        self.on_render_boom = on_render_boom
 
     def on_draw(self):
         """ Рендерить это окно """
@@ -56,19 +59,21 @@ class MyGame(arcade.Window):
         if self.GameState == self.isGame:
             self.on_render_game()
         if self.GameState == self.isPause:
-            self.on_render_pause()            
+            self.on_render_pause()
         if self.GameState == self.isMainMenu:
             self.on_render_mainmenu()
         if self.GameState == self.isGameOver:
-            self.on_render_gameover()                                
-        
+            self.on_render_gameover()
+        if self.GameState == self.isBoom:
+            self.on_render_boom()
+
     def on_key_press(self, key, modifiers):
         """ Нажатия на кнопки """
         if key == arcade.key.ESCAPE:
             arcade.window_commands.close_window()
         # Переключение в полноэкранный режим и обратно
         # http://arcade.academy/examples/full_screen_example.html
-        if key == arcade.key.F12:            
+        if key == arcade.key.F12:
             self.is_full_screen = not self.is_full_screen
             self.set_fullscreen(self.is_full_screen)
 
@@ -82,17 +87,17 @@ class MyGame(arcade.Window):
             self.GameState = self.isMainMenu
         if key == arcade.key.KEY_5:
             self.GameState = self.isGameOver
-                               
+
     def update(self, delta_time):
         """ Вся логика, перемещение и т.п должна быть тут"""
         pass
 
 
-def main():    
+def main():
     game = MyGame(SCREEN_WIDTH, SCREEN_HEIGHT)
     game.setup()
     arcade.run()
-    
+
 
 if __name__ == "__main__":
     main()
