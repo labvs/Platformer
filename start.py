@@ -1,6 +1,13 @@
 #-*- coding: utf-8 -*-
 ''' Простой платформер
-    разработчики: студенты ФМЭиИТ
+    разработчики:
+        - Андрей Сурганов (1-ПМИ) (aka zerabog)
+        - Игорь Починок (1-ПМИ) (aka AdmPac)
+        - Анна Кучугура (1-ПМИ) (aka kuchugurann)
+        - Константин Думченко (1-ББИ) (aka slkdivize)
+        - Максим Некрасов (2-ПМИ) (aka Glyceride)
+        - Михайил Куприенко (2-ПМИ) (aka mishkashishka1337)
+
 '''
 ### Импорт необходимых модулей
 import arcade
@@ -41,7 +48,7 @@ class MyGame(arcade.Window):
         self.isPause = 3
         self.isMainMenu = 4
         self.isGameOver = 5
-        self.isBoom = 6
+
         # При старте игры переводим ее в состояние "Заставка"
         self.GameState = self.isTitle
         # Подключаем функции, которые будут отрисовывать соовтетствующие состояния игры
@@ -50,23 +57,25 @@ class MyGame(arcade.Window):
         self.on_render_pause = on_render_pause
         self.on_render_mainmenu = on_render_mainmenu
         self.on_render_gameover = on_render_gameover
-        self.on_render_boom = on_render_boom
 
     def on_draw(self):
         """ Рендерить это окно """
         arcade.start_render()
+        # Вызываем функции отрисовки в зависимости от того в каком состоянии находится игра
         if self.GameState == self.isTitle:
             self.on_render_title()
+
         if self.GameState == self.isGame:
             self.on_render_game()
+
         if self.GameState == self.isPause:
             self.on_render_pause()
+
         if self.GameState == self.isMainMenu:
             self.on_render_mainmenu()
+
         if self.GameState == self.isGameOver:
             self.on_render_gameover()
-        if self.GameState == self.isBoom:
-            self.on_render_boom()
 
     def on_key_press(self, key, modifiers):
         """ Нажатия на кнопки """
@@ -78,14 +87,19 @@ class MyGame(arcade.Window):
             self.is_full_screen = not self.is_full_screen
             self.set_fullscreen(self.is_full_screen)
 
+        # Клавиши принудительного переключения игры из одного состояния в другое
         if key == arcade.key.KEY_1:
             self.GameState = self.isTitle
+
         if key == arcade.key.KEY_2:
             self.GameState = self.isGame
+
         if key == arcade.key.KEY_3:
             self.GameState = self.isPause
+
         if key == arcade.key.KEY_4:
             self.GameState = self.isMainMenu
+
         if key == arcade.key.KEY_5:
             self.GameState = self.isGameOver
 

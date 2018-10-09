@@ -1,11 +1,18 @@
+""" Идет игра """
+
 import arcade
 import random
 import os
 
 def on_render_game():
+    """ Идет игра """
+    # Дальше пишем все что будем рисовать
+    # пример рисования смайлика: http://arcade.academy/examples/happy_face.html#happy-face
+    # функции рисования: http://arcade.academy/quick_index.html#drawing-module
+    # сайт фреймворка arcade: http://arcade.academy
+
     # Текст
     start_x = 50
     start_y = 450
     arcade.draw_point(start_x, start_y, arcade.color.BLUE, 5)
-    arcade.draw_text("Идет Игра", start_x, start_y, arcade.color.BLACK, 40)
-    arcade.draw_text("Андрей", 100, 600, arcade.color.BLACK, 40)
+    arcade.draw_text("Идет игра", start_x, start_y, arcade.color.BLACK, 40)
