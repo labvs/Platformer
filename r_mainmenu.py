@@ -27,8 +27,8 @@ def on_render_mainmenu():
         arcade.draw_point(start_x, start_y, arcade.color.BLUE, 5)
         arcade.draw_text("Идет Главное меню", start_x, start_y, arcade.color.BLACK, 40)
 
-        start_x = 50
-        start_y = 450
+        start_x = 100
+        start_y = 550
         arcade.draw_point(start_x, start_y, arcade.color.BLUE, 5)
         arcade.draw_text("Анна", start_x, start_y, arcade.color.BLACK, 40)
 
