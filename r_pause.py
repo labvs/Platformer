@@ -26,3 +26,8 @@ def on_render_pause():
         start_y = 450
         arcade.draw_point(start_x, start_y, arcade.color.BLUE, 5)
         arcade.draw_text("Идет Пауза", start_x, start_y, arcade.color.BLACK, 40)
+        
+        # Имя
+        start_x = 50
+        start_y = 495
+        arcade.draw_text("Костя", start_x, start_y, arcade.color.RED, 35)
