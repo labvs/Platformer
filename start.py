@@ -26,7 +26,7 @@ from r_game import on_render_game
 from r_pause import on_render_pause
 from r_mainmenu import on_render_mainmenu
 from r_gameover import on_render_gameover
-from r_boom import on_render_boom
+
 
 ### Основной класс игры
 class MyGame(arcade.Window):
