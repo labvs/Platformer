@@ -7,7 +7,11 @@ git config --global http.sslVerify false
 git clone https://github.com/labvs/Platformer.git
 # Выгружаем на сервер
 git add .
+
 git commit -a
+
 git push
-#разработчики 
-Друмчегло Константин Сергеевич
+
+
+#Разработчики
+Лящ Олег Иванович
