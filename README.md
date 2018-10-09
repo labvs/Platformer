@@ -6,27 +6,9 @@
 Более поробное описание сценария игра
 
 - - -
-# Некоторые основные команды для работы с git
+**Оглавление**
+1. [ToDo (или "Что надо делать?")](https://github.com/labvs/Platformer/blob/master/ToDo.md)
+2. [Разработчики (или "те, кто все это делает")](https://github.com/labvs/Platformer/blob/master/developers.md)
+3. [Основы работы с git (или "как закомитить и запушить?")](https://github.com/labvs/Platformer/blob/master/git_basics.md)
+4. ...
 
-**Колнируем себе**
-    
-    git clone https://github.com/labvs/Platformer.git
-
-**Добавляем изменения**
-    
-    git add .
-
-**Фиксируем изменения (коммитим)**
-
-    git commit -a
-
-**Отправляем изменения на сервер**  
-(при необходимости надо забрать к себе изменения с сервера комедной git pull)
-
-    git push
-
-**Отключить проверку ssl сертификатов**
-    
-    git config --global http.sslVerify false
-
-- - -
