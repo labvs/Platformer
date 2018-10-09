@@ -26,3 +26,5 @@ def on_render_gameover():
         start_y = 450
         arcade.draw_point(start_x, start_y, arcade.color.BLUE, 5)
         arcade.draw_text("Идет Завершена", start_x, start_y, arcade.color.BLACK, 40)
+        arcade.draw_text("Починок Игорь", 100, 100, arcade.color.RED, 40)
+        
