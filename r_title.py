@@ -26,3 +26,8 @@ def on_render_title():
         start_y = 450
         arcade.draw_point(start_x, start_y, arcade.color.BLUE, 5)
         arcade.draw_text("Идет Заставка", start_x, start_y, arcade.color.BLACK, 40)
+
+        start_x = 50
+        start_y = 400
+        arcade.draw_point(start_x, start_y, arcade.color.BLUE, 5)
+        arcade.draw_text("Максим", start_x, start_y, arcade.color.BLACK, 40)
